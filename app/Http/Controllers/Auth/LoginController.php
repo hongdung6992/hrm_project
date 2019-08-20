@@ -3,37 +3,35 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LoginRequest;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
+  use AuthenticatesUsers;
 
-    use AuthenticatesUsers;
+  protected $redirectTo = '/dashboard';
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/home';
+  public function __construct()
+  {
+    $this->middleware('guest')->except('logout');
+  }
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
+  public function login(LoginRequest $request)
+  {
+    $input = $request->only(array_keys($request->rules()));
+    if (Auth::attempt($input)) {
+      echo 'thanh cong';
+      return redirect()->route('dashboard')->with(['flash_icon' => 'fa fa-check', 'flash_level' => 'info', 'flash_message' => t('auth.notify.success')]);
+    } else {
+      return redirect()->back()->with(['flash_icon' => 'fa fa-exclamation-triangle', 'flash_level' => 'danger', 'flash_message' => t('auth.notify.fail')]);
     }
+  }
+
+  public function logout()
+  {
+    Auth::logout();
+    return redirect()->route('login');
+  }
 }
