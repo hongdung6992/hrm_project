@@ -3,7 +3,7 @@
 <div class="content">
   <div class="container-fluid">
 
-    @include('shared.breadcrumb')
+    @include('shared._breadcrumb')
 
     <div class="row">
       <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
@@ -45,4 +45,5 @@
 
   </div>
 </div>
+@include('shared._notify')
 @endsection

@@ -10,38 +10,24 @@
   <title>Pike Admin - Free Bootstrap 4 Admin Template</title>
   <link rel="stylesheet" href="{{ mix('css/app.css') }}">
   <link rel="stylesheet" href="{{ mix('css/all.css') }}">
-  <script src="{{ mix('js/app.js') }}" defer></script>
-  <script src="{{ mix('js/all.js') }}" defer></script>
+  <script src="{{ mix('js/app.js') }}"></script>
+  <script src="{{ mix('js/all.js') }}"></script>
 </head>
-
+  
 <body class="adminbody">
 
   <div id="main">
 
-    <!-- top bar navigation -->
     @include('layouts.topbar')
-    <!-- End Navigation -->
-
-    <!-- Left Sidebar -->
     @include('layouts.sidebar')
-    <!-- End Sidebar -->
-
 
     <div class="content-page" id="app">
-
-      <!-- Start content -->
       @yield('content')
-      <!-- END content -->
-
     </div>
-    <!-- END content-page -->
 
     @include('layouts.footer')
 
   </div>
-  <!-- END main -->
-
-
 
 </body>
 

@@ -15,4 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::group(['middleware' => 'auth'], function(){
+    Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

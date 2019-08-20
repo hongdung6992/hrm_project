@@ -158,9 +158,11 @@
           </a>
 
           <!-- item-->
-          <a href="#" class="dropdown-item notify-item">
+          <a href="{{ route('logout') }}" class="dropdown-item notify-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit()";>
             <i class="fa fa-power-off"></i> <span>Logout</span>
           </a>
+          {!! Form::open(['method' => 'POST', 'route' => 'logout', 'id' => 'logout-form', 'style' => 'display:none']) !!}
+          {!! Form::close() !!}
 
           <!-- item-->
           <a target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item">
