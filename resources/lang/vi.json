@@ -1,0 +1,22 @@
+{
+  "intro": {
+    "app": "App quản lý nhân sự (bản demo)",
+    "dev": "Dev: Nguyễn Hồng Dững"
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Mật khẩu",
+    "login": "Đăng nhập",
+    "remember": "Ghi nhớ mật khẩu",
+    "forgot": "Quên mật khẩu",
+    "notify": {
+      "success": "Đăng nhập thành công",
+      "fail": "Email hoặc mật khẩu không đúng"
+    }
+  },
+  "validate": {
+    "required": "không được để trống",
+    "invalid": "không hợp lệ"
+  }
+  
+}
