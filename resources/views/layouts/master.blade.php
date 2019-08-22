@@ -7,11 +7,11 @@
   <meta name="description" content="Free Bootstrap 4 Admin Theme | Pike Admin">
   <meta name="author" content="Pike Web Development - https://www.pikephp.com">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>Pike Admin - Free Bootstrap 4 Admin Template</title>
+  <title>@yield('title')</title>
   <link rel="stylesheet" href="{{ mix('css/app.css') }}">
   <link rel="stylesheet" href="{{ mix('css/all.css') }}">
-  <script src="{{ mix('js/app.js') }}"></script>
   <script src="{{ mix('js/all.js') }}"></script>
+  <script src="{{ mix('js/app.js') }}"></script>
 </head>
   
 <body class="adminbody">

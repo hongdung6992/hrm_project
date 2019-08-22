@@ -12,12 +12,19 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  return view('welcome');
 });
 
-Route::group(['middleware' => 'auth'], function(){
-    Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+// Route::middleware(['auth'])->group(function () {
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::group(['prefix' => 'users'], function () {
+  Route::get('/', 'UserController@index')->name('users.index');
+  Route::get('create', 'UserController@create')->name('users.create');
+  Route::post('store', 'UserController@store')->name('users.store');
+  Route::get('edit', 'UserController@edit')->name('users.edit');
+  Route::put('update', 'UserController@update')->name('users.update');
 });
+// });
 
 Auth::routes();
 

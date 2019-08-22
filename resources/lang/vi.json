@@ -17,6 +17,65 @@
   "validate": {
     "required": "không được để trống",
     "invalid": "không hợp lệ"
+  },
+  "th": {
+    "index": "STT",
+    "action": "Xử lý",
+    "active": "Kích hoạt",
+    "user": {
+      "name": "Họ và tên",
+      "email": "Địa chỉ email",
+      "phone": "Số điện thoại",
+      "role": "Vai trò"
+    }
+  },
+  "button": {
+    "add": "Thêm mới",
+    "delete": "Xóa",
+    "edit": "Chỉnh sửa",
+    "save": "Lưu",
+    "back": "Quay lại"
+  },
+  "boolean": {
+    "yes": "Có",
+    "no": "Không"
+  },
+  "datatable": {
+    "lengthMenu": "Hiển thị _MENU_ bản ghi / trang",
+    "zeroRecords": "Không tìm thấy dữ liệu!",
+    "info": "Trang hiển thị _PAGE_ / _PAGES_",
+    "infoEmpty": "Không có bản ghi nào",
+    "infoFiltered": "(được lọc từ _MAX_ bản ghi)",
+    "search": "Tìm kiếm"
+  },
+  "dashboard": {
+    "title": "Bảng điều khiển"
+  },
+  "user": {
+    "title": "Quản lý người dùng",
+    "list": "Danh sách người dùng",
+    "create": "Thêm mới người dùng",
+    "edit": "Chỉnh sửa người dùng",
+    "name": "Họ và tên",
+    "email": "Địa chỉ email",
+    "phone": "Số điện thoại",
+    "role": "Vai trò",
+    "active": "Kích hoạt"
+  },
+  "permission": {
+    "create": "Thêm mới",
+    "read": "Hiển thị",
+    "update": "Chỉnh sửa",
+    "delete": "Xóa",
+    "dashboard": "bảng điều khiển",
+    "users": "người dùng",
+    "personnels": "nhân sự",
+    "contracts": "hợp đồng",
+    "decisions": "quyết định",
+    "departments": "phòng ban",
+    "roles": "vai trò người dùng",
+    "permission": "quyền người dùng",
+    "profile": "thông tin người dùng",
+    "company": "thông tin công ty"
   }
-  
 }

@@ -1,4 +1,5 @@
 @extends('layouts.master')
+@section('title'){{ t('dashboard.title') }}@endsection
 @section('content')
 <div class="content">
   <div class="container-fluid">

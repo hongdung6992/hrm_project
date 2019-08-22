@@ -11,6 +11,7 @@ mix.js('resources/js/app.js', 'public/js')
     'public/plugins/jstree/style.css',
     'public/plugins/jquery.filer/css/jquery.filer.css',
     'public/plugins/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css',
+    'public/plugins/select2/css/select2.min.css',
     'public/font/css/font-awesome.min.css'
   ], 'public/css/all.css')
   .styles([
@@ -37,6 +38,8 @@ mix.js('resources/js/app.js', 'public/js')
     'public/plugins/waypoints/lib/jquery.waypoints.min.js',
     'public/plugins/counterup/jquery.counterup.min.js',
     'public/plugins/jstree/jstree.min.js',
-    'public/plugins/jquery.filer/js/jquery.filer.min.js'
+    'public/plugins/jquery.filer/js/jquery.filer.min.js',
+    'public/plugins/parsleyjs/parsley.min.js',
+    'public/plugins/select2/js/select2.min.js'
   ], 'public/js/all.js')
   .version();

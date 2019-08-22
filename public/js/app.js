@@ -91,9 +91,39 @@
   !*** ./resources/js/app.js ***!
   \*****************************/
 /*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ./common */ "./resources/js/common.js");
+
+__webpack_require__(/*! ./user */ "./resources/js/user.js");
+
+/***/ }),
+
+/***/ "./resources/js/common.js":
+/*!********************************!*\
+  !*** ./resources/js/common.js ***!
+  \********************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
+$(document).ready(function () {
+  $('.select2').select2({
+    minimumResultsForSearch: -1
+  });
+});
 
+/***/ }),
+
+/***/ "./resources/js/user.js":
+/*!******************************!*\
+  !*** ./resources/js/user.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  $('#form').parsley();
+});
 
 /***/ }),
 
