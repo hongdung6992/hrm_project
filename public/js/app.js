@@ -97,6 +97,8 @@ __webpack_require__(/*! ./common */ "./resources/js/common.js");
 
 __webpack_require__(/*! ./user */ "./resources/js/user.js");
 
+__webpack_require__(/*! ./permission */ "./resources/js/permission.js");
+
 /***/ }),
 
 /***/ "./resources/js/common.js":
@@ -109,6 +111,44 @@ __webpack_require__(/*! ./user */ "./resources/js/user.js");
 $(document).ready(function () {
   $('.select2').select2({
     minimumResultsForSearch: -1
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/permission.js":
+/*!************************************!*\
+  !*** ./resources/js/permission.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  $.switcher();
+});
+$(document).ready(function () {
+  $('.form-check-input').on('change', function () {
+    var permission_id = $(this).val();
+    var role_id = $(this).data('role_id');
+    var checked = $(this).prop('checked');
+    var url = $('#permisison-table').data('url');
+    $.ajax({
+      type: "post",
+      url: url,
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"').attr('content')
+      },
+      data: {
+        permission_id: permission_id,
+        role_id: role_id,
+        checked: checked
+      },
+      dataType: "json",
+      success: function success(data, status) {
+        console.log(status);
+        console.log(data);
+      }
+    });
   });
 });
 

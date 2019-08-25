@@ -27,6 +27,9 @@
       "email": "Địa chỉ email",
       "phone": "Số điện thoại",
       "role": "Vai trò"
+    },
+    "permission": {
+      "name": "Tên các quyền"
     }
   },
   "button": {
@@ -39,6 +42,10 @@
   "boolean": {
     "yes": "Có",
     "no": "Không"
+  },
+  "switch": {
+    "on": "BẬT",
+    "off": "TẮT"
   },
   "datatable": {
     "lengthMenu": "Hiển thị _MENU_ bản ghi / trang",
@@ -63,6 +70,8 @@
     "active": "Kích hoạt"
   },
   "permission": {
+    "title": "Vai trò & phân quyền",
+    "perms": "Phân quyền",
     "create": "Thêm mới",
     "read": "Hiển thị",
     "update": "Chỉnh sửa",
@@ -76,6 +85,10 @@
     "roles": "vai trò người dùng",
     "permission": "quyền người dùng",
     "profile": "thông tin người dùng",
-    "company": "thông tin công ty"
+    "company": "thông tin công ty",
+    "list": "Danh sách các quyền"
+  },
+  "personnel": {
+    "title": "Quản trị nhân sự"
   }
 }

@@ -2,6 +2,7 @@
 
 namespace App;
 
+
 use Illuminate\Database\Eloquent\Model;
 
 class Role extends Model
@@ -16,7 +17,13 @@ class Role extends Model
     return $this->belongsToMany(User::class, 'role_user');
   }
 
-  public function permissions(){
+  public function permissions()
+  {
     return $this->belongsToMany(Permission::class, 'permission_role');
+  }
+
+  public function hasPermission($permission)
+  {
+    return optional($this->permissions->pluck('slug'))->contains($permission->slug);
   }
 }
