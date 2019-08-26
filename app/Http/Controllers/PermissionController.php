@@ -23,11 +23,12 @@ class PermissionController extends Controller
   {
     $role = Role::findOrFail($request->role_id);
     $permission = Permission::findOrFail($request->permission_id);
-
-    if ($request->checked == "true") {
-      $role->permissions()->attach($permission);
-    } else {
-      $role->permissions()->detach($permission);
+    if ($request->ajax()) {
+      if ($request->checked == "true") {
+        $role->permissions()->attach($permission);
+      } else {
+        $role->permissions()->detach($permission);
+      }
     }
   }
 }

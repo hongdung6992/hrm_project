@@ -5,9 +5,11 @@
   @if ($roles->isNotEmpty())
   @foreach ($roles as $role)
   <td class="text-center">
-    {{-- <div class="form-check form-check-inline"> --}}
-      {!! Form::checkbox("roles[$role->id][]", $permission->id, $role->hasPermission($permission), ['class' => 'form-check-input', 'data-role_id' => $role->id]) !!}
-    {{-- </div> --}}
+    {!! Form::checkbox(
+    "roles", $permission->id,
+    $role->hasPermission($permission),
+    ['class' =>'form-check-input', 'data-role_id' => $role->id]
+    ) !!}
   </td>
   @endforeach
   @endif

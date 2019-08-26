@@ -23,6 +23,7 @@ Route::get('/', function () {
     Route::post('store', 'UserController@store')->name('users.store');
     Route::get('edit', 'UserController@edit')->name('users.edit');
     Route::put('update', 'UserController@update')->name('users.update');
+    Route::put('status', 'UserController@updateStatus')->name('user.status');
   });
   Route::group(['prefix' => 'permissions'], function () {
     Route::get('/', 'PermissionController@index')->name('permissions.index');

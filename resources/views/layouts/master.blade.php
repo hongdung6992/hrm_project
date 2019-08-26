@@ -1,34 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Free Bootstrap 4 Admin Theme | Pike Admin">
-  <meta name="author" content="Pike Web Development - https://www.pikephp.com">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>@yield('title')</title>
   <link rel="stylesheet" href="{{ mix('css/app.css') }}">
   <link rel="stylesheet" href="{{ mix('css/all.css') }}">
+  <!-- <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"> -->
   <script src="{{ mix('js/all.js') }}"></script>
   <script src="{{ mix('js/app.js') }}"></script>
-</head>
-  
-<body class="adminbody">
+  </head>
 
-  <div id="main">
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
 
-    @include('layouts.topbar')
+    @include('layouts.header')
     @include('layouts.sidebar')
 
-    <div class="content-page" id="app">
+    <div class="content-wrapper">
+      @include('shared._breadcrumb')
       @yield('content')
     </div>
 
     @include('layouts.footer')
+    @include('layouts.control_sidebar')
 
   </div>
-
 </body>
 
 </html>

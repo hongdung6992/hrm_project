@@ -9,7 +9,7 @@ $(document).ready(() => {
     var role_id = $(this).data('role_id');
     var checked = $(this).prop('checked');
     var url = $('#permisison-table').data('url');
-    
+
     $.ajax({
       type: "post",
       url: url,
@@ -21,10 +21,6 @@ $(document).ready(() => {
       },
       dataType: "json",
       success: function (data, status) {
-        console.log(status);
-        
-        console.log(data);
-        
       }
     });
 

@@ -108,11 +108,7 @@ __webpack_require__(/*! ./permission */ "./resources/js/permission.js");
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-$(document).ready(function () {
-  $('.select2').select2({
-    minimumResultsForSearch: -1
-  });
-});
+
 
 /***/ }),
 
@@ -144,10 +140,7 @@ $(document).ready(function () {
         checked: checked
       },
       dataType: "json",
-      success: function success(data, status) {
-        console.log(status);
-        console.log(data);
-      }
+      success: function success(data, status) {}
     });
   });
 });
@@ -162,7 +155,23 @@ $(document).ready(function () {
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
-  $('#form').parsley();
+  $('.form-user-status').on('change', function () {
+    var user_id = $(this).val();
+    var checked = $(this).prop('checked');
+    var url = $('.user-table').data('url');
+    $.ajax({
+      type: "put",
+      url: url,
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"').attr('content')
+      },
+      data: {
+        user_id: user_id,
+        checked: checked
+      },
+      success: function success(data, status) {}
+    });
+  });
 });
 
 /***/ }),

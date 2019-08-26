@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Role;
 use Illuminate\Http\Request;
+use App\User;
 
 class UserController extends Controller
 {
@@ -13,7 +15,9 @@ class UserController extends Controller
       'parent' => t('user.title'),
       'level_1' => t('user.list')
     ];
-    return view('users.index', compact('breadcrumbs'));
+
+    $users = User::with('roles')->get();
+    return view('users.index', compact('breadcrumbs', 'users'));
   }
 
   public function create()
@@ -22,8 +26,11 @@ class UserController extends Controller
       'parent' => t('user.title'),
       'level_1' => t('user.create')
     ];
-    return view('users.create', compact('breadcrumbs'));
+    
+    $roles = Role::pluck('name', 'id');
+    return view('users.create', compact('breadcrumbs', 'roles'));
   }
+  
 
   public function store(Request $request)
   {
@@ -52,5 +59,17 @@ class UserController extends Controller
   public function destroy($id)
   {
     //
+  }
+
+  public function updateStatus(Request $request)
+  {
+    if ($request->ajax()) {
+      $user = User::where('id', $request->user_id);
+      if ($request->checked == 'true') {
+        $user->update(['active' => 1]);
+      } else {
+        $user->update(['active' => 0]);
+      }
+    }
   }
 }

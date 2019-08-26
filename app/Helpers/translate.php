@@ -1,5 +1,6 @@
 <?php
 
+// Translate
 if (!function_exists('t')) {
   function t($key, $params = [])
   {
