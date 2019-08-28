@@ -15,9 +15,10 @@
     {!! Form::checkbox("status", $user->id, $user->active, ['class' =>'form-user-status switch']) !!}
   </td>
   <td>
-    <a href="#" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i></a>
-    <button class="btn btn-danger btn-sm" data-target="#delete" data-toggle="modal"><i
-        class="fa fa-trash-o"></i></button>
+    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i></a>
+    <button class="btn btn-danger btn-sm" data-target="#modal-confirm-delete" data-toggle="modal" data-id="{{ $user->id }}" data-url="{{ route('users.delete') }}">
+      <i class="fa fa-trash-o"></i>
+    </button>
   </td>
 </tr>
 @php $index++ @endphp

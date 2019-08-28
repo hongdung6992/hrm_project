@@ -7,6 +7,7 @@
       <div class="box box-primary">
         <div class="box-header with-border">
           <h3 class="box-title">{{ t('user.create') }}</h3>
+          <small class="help-block">{{ t('user.guide') }}</small>
         </div>
         {!! Form::open(['method' => 'POST', 'route' => 'users.store']) !!}
         @include('users._form')

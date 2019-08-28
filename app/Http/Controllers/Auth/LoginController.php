@@ -22,10 +22,19 @@ class LoginController extends Controller
   {
     $input = $request->only(array_keys($request->rules()));
     if (Auth::attempt($input)) {
-      echo 'thanh cong';
-      return redirect()->route('dashboard')->with(['flash_icon' => 'fa fa-check', 'flash_level' => 'info', 'flash_message' => t('auth.notify.success')]);
+      return redirect()->route('dashboard')
+        ->with([
+          'flash_icon' => 'fa fa-check',
+          'flash_level' => 'info',
+          'flash_message' => t('auth.notify.success')
+        ]);
     } else {
-      return redirect()->back()->with(['flash_icon' => 'fa fa-exclamation-triangle', 'flash_level' => 'danger', 'flash_message' => t('auth.notify.fail')]);
+      return redirect()->back()
+        ->with([
+          'flash_icon' => 'fa fa-exclamation-triangle',
+          'flash_level' => 'danger',
+          'flash_message' => t('auth.notify.fail')
+        ]);
     }
   }
 

@@ -1,4 +1,16 @@
 {
+  "app": {
+    "function": "CHỨC NĂNG ỨNG DỤNG",
+    "manage": "QUẢN LÝ ỨNG DỤNG",
+    "hrm": "Quản lý nhân sự",
+    "department": "Quản lý phòng ban",
+    "contract": "Hợp đồng lao động",
+    "decision": "Quyết định nhân sự",
+    "user": "Người dùng ứng dụng",
+    "role_permission": "Vai trò và phân quyền",
+    "role": "Vai trò",
+    "permission": "Phân quyền"
+  },
   "intro": {
     "app": "App quản lý nhân sự (bản demo)",
     "dev": "Dev: Nguyễn Hồng Dững"
@@ -16,7 +28,11 @@
   },
   "validate": {
     "required": "không được để trống",
-    "invalid": "không hợp lệ"
+    "invalid": "không hợp lệ",
+    "exist": "đã tồn tại",
+    "confirm": "không khớp với :param",
+    "different": "phải khác với :param",
+    "incorrect_password": "Mật khẩu hiện tại không đúng"
   },
   "th": {
     "index": "STT",
@@ -37,7 +53,13 @@
     "delete": "Xóa",
     "edit": "Chỉnh sửa",
     "save": "Lưu",
-    "back": "Quay lại"
+    "back": "Quay lại",
+    "close": "Đóng",
+    "agree": "Đồng ý"
+  },
+  "modal_confirm_delete": {
+    "header": "Xóa đối tượng",
+    "body": "Đối tượng này sẽ bị xóa vĩnh viễn. Bạn có chắc chắn muốn xóa?"
   },
   "boolean": {
     "yes": "Có",
@@ -67,7 +89,21 @@
     "email": "Địa chỉ email",
     "phone": "Số điện thoại",
     "role": "Vai trò",
-    "active": "Kích hoạt"
+    "active": "Kích hoạt",
+    "password": "Mật khẩu",
+    "current_password": "Mật khẩu hiện tại",
+    "new_password": "Mật khẩu mới",
+    "confirm_password": "Xác nhận mật khẩu",
+    "change_password": "Đổi mật khẩu",
+    "guide": "Thông tin đăng nhập sẽ được gửi đến email người dùng sau khi thêm mới thành công",
+    "notify": {
+      "add_success": "Thêm mới người dùng thành công",
+      "edit_success": "Cập nhật người dùng thành công",
+      "delete_success": "Xóa người dùng thành công",
+      "update_profile_success": "Cập nhật thông tin cá nhân thành công",
+      "change_password_success": "Thay đổi mật khẩu thành công"
+    },
+    "profile": "Thông tin cá nhân"
   },
   "permission": {
     "title": "Vai trò & phân quyền",
@@ -84,7 +120,7 @@
     "departments": "phòng ban",
     "roles": "vai trò người dùng",
     "permission": "quyền người dùng",
-    "profile": "thông tin người dùng",
+    "profile": "thông tin cá nhân",
     "company": "thông tin công ty",
     "list": "Danh sách các quyền"
   },

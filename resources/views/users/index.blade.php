@@ -32,6 +32,8 @@
 			</div>
 		</div>
 	</div>
+	@include('shared._modal_confirm_delete')
 </section>
 @include('shared._datatable')
+@include('shared._notify')
 @endsection

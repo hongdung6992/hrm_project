@@ -8,7 +8,7 @@
     {!! Form::checkbox(
     "roles", $permission->id,
     $role->hasPermission($permission),
-    ['class' =>'form-check-input', 'data-role_id' => $role->id]
+    ['class' =>'form-check-input switch', 'data-role_id' => $role->id]
     ) !!}
   </td>
   @endforeach

@@ -1,14 +1,14 @@
 $(document).ready(() => {
-  $.switcher();
+  $.switcher('.switch');
 })
 
+// setting permission
 $(document).ready(() => {
-
   $('.form-check-input').on('change', function () {
-    var permission_id = $(this).val();
-    var role_id = $(this).data('role_id');
-    var checked = $(this).prop('checked');
-    var url = $('#permisison-table').data('url');
+    let permission_id = $(this).val();
+    let role_id = $(this).data('role_id');
+    let checked = $(this).prop('checked');
+    let url = $('#permisison-table').data('url');
 
     $.ajax({
       type: "post",
@@ -25,5 +25,4 @@ $(document).ready(() => {
     });
 
   })
-
 })

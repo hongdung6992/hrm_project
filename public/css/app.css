@@ -42,11 +42,6 @@ button:focus {
   outline: none !important;
 }
 
-.select2 {
-  width: 100% !important;
-  padding: 5px 0;
-}
-
 .login-error {
   color: #ff5d48;
   margin-top: 5px;
