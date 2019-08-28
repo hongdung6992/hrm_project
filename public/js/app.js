@@ -1585,8 +1585,7 @@ $(document).ready(function () {
 $(document).ready(function () {
   $('#profile button').on('click', function () {
     var data = $('#profile form').serialize();
-    var url = $(this).data('url'); // -> updateProfile function at ProfileController
-
+    var url = $('#profile form').attr('action');
     $('#profile .form-group').removeClass('has-error');
     $('#profile span.help-block').remove();
     $.ajax({
@@ -1629,27 +1628,26 @@ $(document).ready(function () {
 $(document).ready(function () {
   $('#change-password button').on('click', function () {
     var data = $('#change-password form').serialize();
-    var url = $(this).data('url');
+    var url = $('#change-password form').attr('action');
     $('#change-password .form-group').removeClass('has-error');
     $('#change-password span.help-block').remove();
+    $('#change-password form')[0].reset();
     $.ajax({
       type: "put",
       url: url,
+      data: data,
       headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"').attr('content')
       },
-      data: data,
       dataType: "json",
       success: function success(data, status) {
         if (status == 'success') {
           if (data.status == 'fails') {
-            $('#change-password input').val('');
             var message = '<span class="help-block">' + data.error + '</span>';
             $('#change-password input[name="current_password"]').after(message);
             $('#change-password input[name="current_password"]').parents('.form-group').addClass('has-error');
           } else {
             $('.alert').remove();
-            $('#change-password input').val('');
             $.notify({
               icon: data.flash_icon,
               message: data.flash_message
@@ -1663,7 +1661,6 @@ $(document).ready(function () {
       error: function error(params) {
         if (params.status == 422) {
           var errors = params.responseJSON.errors;
-          $('#change-password input').val('');
           $.each(errors, function (key, value) {
             var message = '<span class="help-block">' + errors[key] + '</span>';
             $('#change-password input[name="' + key + '"]').next().remove();

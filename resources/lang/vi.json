@@ -55,7 +55,8 @@
     "save": "Lưu",
     "back": "Quay lại",
     "close": "Đóng",
-    "agree": "Đồng ý"
+    "agree": "Đồng ý",
+    "logout": "Đăng xuất"
   },
   "modal_confirm_delete": {
     "header": "Xóa đối tượng",

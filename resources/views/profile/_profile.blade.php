@@ -1,5 +1,5 @@
 <div class="active tab-pane" id="profile">
-  {!! Form::open(['method' => 'PUT', route('users.index'), 'class' => 'form-horizontal']) !!}
+  {!! Form::open(['method' => 'PUT', 'route' => 'profile.update', 'class' => 'form-horizontal']) !!}
   {!! Form::hidden('id', isset($currentUser) ? $currentUser->id : '') !!}
   <div class="form-group">
     {!! Form::label('name', t('user.name'), ['class' => 'col-sm-3 control-label']) !!}
@@ -27,7 +27,7 @@
   </div>
   <div class="form-group">
     <div class="col-sm-offset-3 col-sm-9">
-      {!! Form::button(t('button.save'), ['class' => 'btn btn-primary', 'data-url' => route('profile.update')]) !!}
+      {!! Form::button(t('button.save'), ['class' => 'btn btn-primary']) !!}
     </div>
   </div>
   {!! Form::close() !!}

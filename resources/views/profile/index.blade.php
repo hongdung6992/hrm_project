@@ -6,11 +6,13 @@
     <div class="col-md-3">
       <div class="box box-primary">
         <div class="box-body box-profile">
-          <img class="profile-user-img img-responsive img-circle" src="{{ asset('dist/img/user4-128x128.jpg') }}"
-            alt="User profile picture">
+          <img class="profile-user-img img-responsive img-circle"
+            src="{{ asset('images/avatar/' . $currentUser->avatar) }}">
           <h3 class="profile-username text-center">{{ $currentUser->name }}</h3>
           <p class="text-muted text-center">{{ $currentUser->email }}</p>
-          <a href="#" class="btn btn-primary btn-block"><b>Thay đổi avatar</b></a>
+          {!! Form::open(['method' => 'post', 'route' => 'profile.uploadAvatar']) !!}
+          {!! Form::file('avatar', ['class' => 'btn btn-primary btn-block']) !!}
+          {!! Form::close() !!}
         </div>
       </div>
     </div>
