@@ -5,13 +5,13 @@
   <div class="row">
     <div class="col-md-3">
       <div class="box box-primary">
-        <div class="box-body box-profile">
+        <div class="box-body box-profile" id="upload-avatard">
           <img class="profile-user-img img-responsive img-circle"
             src="{{ asset('images/avatar/' . $currentUser->avatar) }}">
           <h3 class="profile-username text-center">{{ $currentUser->name }}</h3>
           <p class="text-muted text-center">{{ $currentUser->email }}</p>
-          {!! Form::open(['method' => 'post', 'route' => 'profile.uploadAvatar']) !!}
-          {!! Form::file('avatar', ['class' => 'btn btn-primary btn-block']) !!}
+          {!! Form::open(['method' => 'put', 'route' => 'profile.uploadAvatar', 'enctype' => 'multipart/form-data']) !!}
+          {!! Form::file('avatar', ['class' => 'btn btn-primary btn-block', 'id' => 'input-avatar']) !!}
           {!! Form::close() !!}
         </div>
       </div>

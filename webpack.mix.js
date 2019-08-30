@@ -12,6 +12,7 @@ mix.js('resources/js/app.js', 'public/js')
     'public/dist/css/skins/_all-skins.min.css',
     'public/plugins/ON-OFF-Toggle-Switches-Switcher/css/switcher.css',
     'public/css/animate.min.css',
+    'node_modules/bootstrap-fileinput/css/fileinput.min.css'
   ], 'public/css/all.css')
   .styles([
     'public/css/animate.min.css',
@@ -33,6 +34,12 @@ mix.js('resources/js/app.js', 'public/js')
     'public/plugins/ON-OFF-Toggle-Switches-Switcher/js/jquery.switcher.min.js',
     'public/dist/js/pages/dashboard2.js',
     'public/dist/js/adminlte.min.js',
-    'public/dist/js/demo.js'
+    'public/dist/js/demo.js',
+    'node_modules/bootstrap-fileinput/js/plugins/piexif.min.js',
+    'node_modules/bootstrap-fileinput/js/plugins/sortable.min.js',
+    'node_modules/bootstrap-fileinput/js/plugins/purify.min.js',
+    'node_modules/bootstrap-fileinput/js/fileinput.min.js',
+    'node_modules/bootstrap-fileinput/themes/fa/theme.min.js',
+    'node_modules/bootstrap-fileinput/js/locales/LANG.js',
   ], 'public/js/all.js')
   .version();

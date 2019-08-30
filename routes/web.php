@@ -35,13 +35,23 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/', 'ProfileController@index')->name('profile.index');
     Route::put('update', 'ProfileController@updateProfile')->name('profile.update');
     Route::put('change-password', 'ProfileController@changePassword')->name('profile.changePassword');
-    Route::post('upload-avatar', 'ProfileController@uploadAvatar')->name('profile.uploadAvatar');
+    Route::put('upload-avatar', 'ProfileController@uploadAvatar')->name('profile.uploadAvatar');
   });
 
-  //permisison
+  // permisison
   Route::group(['prefix' => 'permissions'], function () {
     Route::get('/', 'PermissionController@index')->name('permissions.index');
     Route::post('setting', 'PermissionController@savePermissionRole')->name('permission.setting');
+  });
+
+  // department
+  Route::group(['prefix' => 'departments'], function () {
+    Route::get('/', 'DepartmentController@index')->name('departments.index');
+    Route::get('create', 'DepartmentController@create')->name('departments.create');
+    Route::post('store', 'DepartmentController@store')->name('departments.store');
+    Route::get('edit/{id}', 'DepartmentController@edit')->name('departments.edit');
+    Route::put('update/{id}', 'DepartmentController@update')->name('departments.update');
+    Route::delete('delete', 'DepartmentController@destroy')->name('departments.delete');
   });
 });
 
